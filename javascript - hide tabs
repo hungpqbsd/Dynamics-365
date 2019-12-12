@@ -1,0 +1,21 @@
+// version 9.0 
+// show tabs on form base on field values
+function showTabs(executionContext)
+{   
+    var formContext = executionContext.getFormContext(); // get formContext
+
+    // get field values: fieldName = bsd_demo
+    var _type = formContext.getAttribute('bsd_demo').getValue();
+    
+    // if bsd_demo is option 1, show tab 2, 3, 4
+    if(_type == 626050000) {
+        formContext.ui.tabs.get("tab_2").setVisible(true)
+        formContext.ui.tabs.get("tab_3").setVisible(true)
+        formContext.ui.tabs.get("tab_4").setVisible(true) 
+    }
+    else {
+        formContext.ui.tabs.get("tab_2").setVisible(false)
+        formContext.ui.tabs.get("tab_3").setVisible(false)
+        formContext.ui.tabs.get("tab_4").setVisible(false) 
+    }
+}
